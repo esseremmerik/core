@@ -110,16 +110,7 @@ class ChatterServiceProvider extends ServiceProvider
     {
         view()->composer('chatter::*', MenuViewComposer::class);
     }
-
-    protected function bootCommand(): void
-    {
-        if ($this->app->runningInConsole()) {
-            $this->commands([
-                ChatterInstallCommand::class
-            ]);
-        }
-    }
-
+    
     protected function registerHelpers(): void
     {
         // Load the helpers in app/Http/helpers.php
