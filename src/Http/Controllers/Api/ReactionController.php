@@ -17,11 +17,6 @@ use Chatter\Core\Http\Requests\ReactionRequest;
 
 class ReactionController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:api');
-    }
-
     public function toggle(ReactionRequest $request, $id)
     {
         $post = Post::findOrFail($id);

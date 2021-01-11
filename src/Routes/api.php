@@ -3,7 +3,7 @@
 Route::namespace('Chatter\Core\Http\Controllers\Api')
     ->name('chatter.api.')
     ->prefix('api/chatter')
-    ->middleware('api')
+    ->middleware('web')
     ->group(function () {
         Route::apiResource('category', 'CategoryController');
         Route::apiResource('discussion', 'DiscussionController');

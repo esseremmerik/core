@@ -10,11 +10,6 @@ use Chatter\Core\Http\Requests\StoreUsernameRequest;
 
 class UsernameController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth:api');
-    }
-
     public function store(StoreUsernameRequest $request)
     {
         return new UserResource(tap(Auth::user(), function ($user) use ($request) {
