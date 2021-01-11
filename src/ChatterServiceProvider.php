@@ -77,7 +77,6 @@ class ChatterServiceProvider extends ServiceProvider
         $this->bootSubscribers();
         $this->bootInterfaces();
         $this->bootMenu();
-        $this->bootCommand();
         $this->bootPassport();
     }
 
@@ -110,7 +109,7 @@ class ChatterServiceProvider extends ServiceProvider
     {
         view()->composer('chatter::*', MenuViewComposer::class);
     }
-    
+
     protected function registerHelpers(): void
     {
         // Load the helpers in app/Http/helpers.php
